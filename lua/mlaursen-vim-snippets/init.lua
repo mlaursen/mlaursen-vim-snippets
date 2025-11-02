@@ -1,3 +1,9 @@
 local util = require("vim-react-snippets.util")
 
-return util.create_init("mlaursen-vim-snippets")
+local M = {}
+
+M.setup = function()
+  util.load("mlaursen-vim-snippets")
+end
+
+return M

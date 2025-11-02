@@ -8,21 +8,12 @@ With [lazy.nvim] and [LuaSnip]:
 
 ```diff
   {
-    "hrsh7th/nvim-cmp",
+    "L3MON4D3/LuaSnip",
     dependencies = {
-      "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
-+     "mlaursen/vim-react-snippets",
-+     "mlaursen/mlaursen-vim-snippets",
++     { "mlaursen/vim-react-snippets", opts = {} },
++     { "mlaursen/mlaursen-vim-snippets", opts = {} },
     },
-    ---@param opts cmp.ConfigSchema
-    opts = function()
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
-+     require("vim-react-snippets").lazy_load()
-+     require("mlaursen-vim-snippets").lazy_load()
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      local compare = cmp.config.compare
 ```
 
 With [vim-plug] and [UltiSnips]:
