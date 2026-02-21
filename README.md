@@ -1,6 +1,6 @@
 # mlaursen-vim-snippets
 
-Custom code snippets that should be used with [LuaSnip] or [UltiSnips].
+Custom code snippets that should be used with [LuaSnip].
 
 ## Installation
 
@@ -14,13 +14,6 @@ With [lazy.nvim] and [LuaSnip]:
 +     { "mlaursen/vim-react-snippets", opts = {} },
 +     { "mlaursen/mlaursen-vim-snippets", opts = {} },
     },
-```
-
-With [vim-plug] and [UltiSnips]:
-
-```diff
- Plug 'SirVer/ultisnips'
-+Plug 'mlaursen/mlaursen-vim-snippets'
 ```
 
 ## Luasnip Template
@@ -56,6 +49,5 @@ local k = require("luasnip.nodes.key_indexer").new_key
 ```
 
 [luasnip]: https://github.com/L3MON4D3/LuaSnip
-[ultisnips]: https://github.com/SirVer/ultisnips
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [vim-plug]: https://github.com/junegunn/vim-plug
