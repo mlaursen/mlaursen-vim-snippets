@@ -1,12 +1,10 @@
 local M = {}
 
 M.current_branch = function()
-  local branch = ""
-  if vim.fn.exists(":Git") then
-    branch = vim.fn.FugitiveHead()
-  else
-    branch = vim.fn.system("git branch --show-current")
-  end
+  local root = (package.loaded["lazyvim.util"] and require("lazyvim.util").root.get()) or vim.fn.getcwd()
+
+  local result = vim.fn.systemlist("git -C " .. vim.fn.shellescape(root) .. " branch --show-current")
+  local branch = (vim.v.shell_error == 0 and result[1]) or ""
   local ticket = branch:gsub("%s", ""):gsub("^(.+/)", "")
   return ticket or branch
 end
